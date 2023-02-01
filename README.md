@@ -4,7 +4,7 @@
 ## ORM
 - Object Relational Mapping
 - 객체와 데이터베스의 데이터를 연결해주는(매핑) 기술
-> 역할 : 자바에서 객체 코드를 잉요해서 DB 테이블 생성을 자동으로 해줌
+> 역할 : 자바에서 객체 코드를 이용해서 DB 테이블 생성을 자동으로 해줌
 
 # Spring Data JPA
 반복 작성되는 메서드를 자동화하여 기본적인 CRUD(create,Read,Update,Delete) 메서드를 제공하는 라이브러리
