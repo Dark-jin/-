@@ -43,6 +43,28 @@ url 주소에 미리 협의된 데이터를 파라미터를 통해 넘기는 것
 ### 테스트 서버는 update or validate
 ### 스테이징과 운영 서버는 validate or none
 
+# NullPointerException
+실제값이 아닌 null을 가지고 있는 객체/변수를 호출할 때 발생하는 예외
+### Optional을 사용하면 됨!
+#### 사용법
+- Optinal의 static method의 empty(),of(),ofNullable()을 통해서만 Optional 객체를 생성할 수 있다.
+- 참조변수의 값이 null일 가능성이 있으면, of() 대신 ofNullable()을 사용해야함
+```
+Optional<String> optVal = Optional.of(null); //NPE 발생
+Optional<String> optVal = Optional.ofNullable(null); // OK
+```
+- Optional<'T'>타입의 참조변수를 기본갑으로 초기화할 때는 empty()를 사용
+```
+Optional<String> optVal = null ;
+Optional<String> optVal = Optional.<String>empty(); // 빈 객체로 초기화
+```
+- Optional 객체의 값 가져오기
+```
+Optional<String> optVal = Optional.of("abc");
+String str1 = optVal.get(); //optVal에 저장된 값을 반환. null이면 예외 발생
+String str2 = optVal.orElse(""); //optVal에 저장된 값이 null일 때는 ""를 반환
+```
+
 
 
 ## 참고자료
@@ -51,3 +73,4 @@ https://velog.io/@pear/Query-String-%EC%BF%BC%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A7%8
 https://thalals.tistory.com/248
 https://dbjh.tistory.com/77
 https://mangkyu.tistory.com/18
+https://velog.io/@injoon2019/%EC%9E%90%EB%B0%94-NullPointerException-%EC%B2%98%EB%A6%AC-%EB%B0%A9%EB%B2%95
